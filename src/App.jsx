@@ -1,13 +1,23 @@
-
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import MovieDetails from './pages/MovieDetails'
+
 
 function App() {
  
 
   return (
-    <>
-      <h2>Movie-Explorer</h2>
-    </>
+        <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+
+        </Routes>
+      
+         </BrowserRouter>
   )
 }
 
